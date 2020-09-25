@@ -40,28 +40,14 @@
             this.overallWG.position(60,400);
             this.specificWM.position(60,500);
             
-            
+            if(touches.length>0){
+                this.hideCustom();
+            }
            this.va.mousePressed(()=>{
+               this.hideCustom();
            //this.va.changeColor();
-              this.va.hide();
-              this.pic.hide();
-              this.overallWG.hide();
-              this.specificWM.hide();
-              textSize(25);
-              //fill("turqouise")
-              this.speak = createButton('Press to speak!');
-              this.speak.position(130,500);
-              this.back = createButton('Go to Home Page');
-              this.back.position(30,650);
-              this.back.mousePressed(()=>{
-                this.speak.hide();
-                this.back.hide();
-                this.va = createButton('VOICE ASSISTANT');
-            this.pic = createButton('TAKE A PIC!');
-            this.overallWG = createButton('TIPS TO MANAGE OVERALL WASTE GENERATION');
-            this.specificWM = createButton('TIPS TO REDUCE A SPECIFIC WASTE MATERIAL');
-              });
-
+              
+            touches = [];
               this.speak.mousePressed(()=>{
                /*var talk = new p5.Speech(); // speech synthesis object
     talk.speak('How can I help you?'); // say something
@@ -594,7 +580,26 @@
 
 
           }
-          
+           hideCustom(){
+               this.va.hide();
+              this.pic.hide();
+              this.overallWG.hide();
+              this.specificWM.hide();
+              textSize(25);
+              //fill("turqouise")
+              this.speak = createButton('Press to speak!');
+              this.speak.position(130,500);
+              this.back = createButton('Go to Home Page');
+              this.back.position(30,650);
+              this.back.mousePressed(()=>{
+                this.speak.hide();
+                this.back.hide();
+                this.va = createButton('VOICE ASSISTANT');
+            this.pic = createButton('TAKE A PIC!');
+            this.overallWG = createButton('TIPS TO MANAGE OVERALL WASTE GENERATION');
+            this.specificWM = createButton('TIPS TO REDUCE A SPECIFIC WASTE MATERIAL');
+              });
+           }
     
           
     }
